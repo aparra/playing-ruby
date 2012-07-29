@@ -27,7 +27,12 @@ class Franquia
     
     @restaurantes.select {|r| r.nome == nome}.first
   end
-
+  
+  def expandir(restaurante)
+    def restaurante.cadastrar_vips
+      puts "Restaurante #{self.nome} agora com area VIP"
+    end
+  end
 end
 
 class Restaurante
@@ -67,3 +72,6 @@ restaurante = franquia.pesquisa "sujinho"
 unless restaurante.nil? 
   puts "Encontrou #{restaurante.nome}" 
 end
+
+franquia.expandir restaurante
+restaurante.cadastrar_vips
